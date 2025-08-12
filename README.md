@@ -1,3 +1,3 @@
 # portfolio
 This is my live portfolio website 
-(/images/Home.png)
+![portfolio](/images/Home.png)
