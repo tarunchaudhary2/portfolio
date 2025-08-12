@@ -1,7 +1,16 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import { Book, ShieldCheck, Award, ExternalLink, Database, Cloud, Code } from 'lucide-react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+"use client";
+import React, { useEffect, useRef } from "react";
+import {
+  Book,
+  ShieldCheck,
+  ExternalLink
+} from "lucide-react";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  Variants
+} from "framer-motion";
 
 const Education = () => {
   const controls = useAnimation();
@@ -16,24 +25,27 @@ const Education = () => {
 
   const educationData = [
     {
-      type: 'education',
+      type: "education",
       icon: <Book className="text-purple-400" size={24} />,
-      title: 'GLA University, Mathura, Uttar Pradesh',
-      subtitle: 'Bachelor of Computer Applications',
-      period: '2020 - 2023',
-      bgColor: 'bg-gray-800/50',
-      borderColor: 'border-purple-600/30',
-      certLink: "https://drive.google.com/file/d/1ZxiK77zV56SS9hUhjXsP5SeuDmF9MswY/view?usp=sharing"
+      title: "GLA University, Mathura, Uttar Pradesh",
+      subtitle: "Bachelor of Computer Applications",
+      period: "2020 - 2023",
+      bgColor: "bg-gray-800/50",
+      borderColor: "border-purple-600/30",
+      certLink:
+        "https://drive.google.com/file/d/1ZxiK77zV56SS9hUhjXsP5SeuDmF9MswY/view?usp=sharing"
     },
     {
-      type: 'certification',
+      type: "certification",
       icon: <ShieldCheck className="text-purple-400" size={24} />,
-      title: 'Java Programming by Great Learning',
-      subtitle: 'Certificate of completion of Java Programing',
-      bgColor: 'bg-gray-800/50',
-      borderColor: 'border-purple-600/30',
-      certLink: "https://drive.google.com/file/d/1iC_7BLc-rgG6NM9_15zzEHasq_xgEbpx/view?usp=sharing"
+      title: "Java Programming by Great Learning",
+      subtitle: "Certificate of completion of Java Programing",
+      bgColor: "bg-gray-800/50",
+      borderColor: "border-purple-600/30",
+      certLink:
+        "https://drive.google.com/file/d/1iC_7BLc-rgG6NM9_15zzEHasq_xgEbpx/view?usp=sharing"
     },
+    // ... rest of your data unchanged
     {
       type: 'certification',
       icon: <ShieldCheck className="text-purple-400" size={24} />,
@@ -137,23 +149,26 @@ const Education = () => {
 
   const CardContent = ({ item }: { item: any }) => (
     <div className="flex items-start">
-      <div className="mr-4 mt-1">
-        {item.icon}
-      </div>
+      <div className="mr-4 mt-1">{item.icon}</div>
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-white">{item.title}</h3>
         <p className="text-gray-300 mt-1">{item.subtitle}</p>
-        {item.period && <p className="text-sm text-gray-400 mt-2">{item.period}</p>}
+        {item.period && (
+          <p className="text-sm text-gray-400 mt-2">{item.period}</p>
+        )}
         <div className="mt-3 flex justify-between items-center">
-          <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${item.type === 'education' ? 'bg-purple-600/20 text-purple-300' : 'bg-purple-600/20 text-purple-300'
-            }`}>
-            {item.type === 'education' ? 'Degree' : 'Certificate'}
+          <span
+            className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${
+              item.type === "education"
+                ? "bg-purple-600/20 text-purple-300"
+                : "bg-purple-600/20 text-purple-300"
+            }`}
+          >
+            {item.type === "education" ? "Degree" : "Certificate"}
           </span>
 
           {item.certLink && (
-            <div
-              className="text-purple-400 hover:text-purple-300 font-medium text-sm flex items-center transition-colors"
-            >
+            <div className="text-purple-400 hover:text-purple-300 font-medium text-sm flex items-center transition-colors">
               View Certificate <ExternalLink size={16} className="ml-1" />
             </div>
           )}
@@ -162,7 +177,7 @@ const Education = () => {
     </div>
   );
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
       opacity: 1,
@@ -170,7 +185,7 @@ const Education = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     })
   };
@@ -191,7 +206,9 @@ const Education = () => {
           }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-white mb-2">Education & Certifications</h2>
+          <h2 className="text-3xl font-bold text-white mb-2">
+            Education & Certifications
+          </h2>
           <div className="w-24 h-1 bg-purple-600 mx-auto"></div>
         </motion.div>
 
