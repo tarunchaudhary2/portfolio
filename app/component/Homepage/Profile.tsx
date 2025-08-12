@@ -75,9 +75,9 @@ const Profile = (props: Props) => {
     // Trigger counter animation when stats section comes into view
     useEffect(() => {
         if (isInView) {
-            animateCounter(0, 1, 1500, setStats, 'experience');
-            animateCounter(0, 3, 2000, setStats, 'projects');
-            animateCounter(0, 20, 2500, setStats, 'clients');
+            animateCounter(0, 2, 1500, setStats, 'experience');
+            animateCounter(0, 4, 2000, setStats, 'projects');
+            animateCounter(0, 21, 2500, setStats, 'clients');
         }
     }, [isInView]);
 
