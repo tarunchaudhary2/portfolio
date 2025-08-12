@@ -163,7 +163,7 @@ const Profile = (props: Props) => {
                             style={{ animationDuration: '2s', animationDelay: '600ms', animationIterationCount: 1 }}>
                             <Github size={16} />
                         </a>
-                        <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer"
+                        <a href="http://3.111.170.116:3000/" target="_blank" rel="noopener noreferrer"
                             className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
                             style={{ animationDuration: '2s', animationDelay: '600ms', animationIterationCount: 1 }}>
                             <Dribbble size={16} />

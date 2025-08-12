@@ -92,8 +92,8 @@ const Projects = () => {
       description:
         "Architect and manage scalable cloud environments on Azure and AWS using Infrastructure as Code (Terraform, Bicep, ARM Templates, AWS CloudFormation) to automate provisioning and reduce deployment time",
       image: "/images/portfolioss.png",
-      githubLink: "https://github.com/tarunchaudhary2",
-      dribbbleLink: "https://dribbble.com",
+      githubLink: "https://github.com/tarunchaudhary2/portfolio",
+      dribbbleLink: "http://3.111.170.116:3000/",
     },
   ];
 

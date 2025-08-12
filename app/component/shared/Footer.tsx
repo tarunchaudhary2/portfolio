@@ -42,7 +42,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://dribbble.com" 
+              href="http://3.111.170.116:3000/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-purple-400 transition-colors"
