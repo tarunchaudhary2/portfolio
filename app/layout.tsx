@@ -9,6 +9,9 @@ import { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Tarun Chaudhary's portfolio",
   description: "A portfolio website for Tarun Chaudhary",
+  icons: {
+    icon: "/icons/favicon.png ", // or "/favicon.png"
+  },
 };
 
 const soraFont = Sora({ subsets: ["latin"] });
