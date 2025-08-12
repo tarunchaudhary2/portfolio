@@ -41,7 +41,7 @@ function AboutSection({}: Props) {
           >
             <h2 className="text-3xl font-bold mb-1">About Me</h2>
             <p className="text-purple-600 text-sm mb-6">
-              Lead DevOps And User Experience Architect Vibes Editing
+              Engineer - Cloud & Infra services
             </p>
 
             <div className="space-y-4">
