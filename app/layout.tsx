@@ -36,7 +36,7 @@ export default function RootLayout({
           shadow="0 0 10px #F5888E,0 0 5px #F5888E"
         />
 
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider>
           <Layout>{children}</Layout>
         </ThemeProvider>
       </body>
