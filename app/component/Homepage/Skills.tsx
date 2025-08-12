@@ -43,7 +43,7 @@ const Skills = () => {
   // All skills & tools with categories
   const skillsData: ServiceProps[] = [
     { icon: <AWScloudlogo size={80} label="AWS Cloud" />, title: "AWS Cloud", category: "Cloud" },
-    { icon: <Azurecloudlogo size={80} label="Azure Cloud" />, title: "Azure Cloud", category: "Cloud" },
+    { icon: <Azurecloudlogo size={60} label="Azure Cloud" />, title: "Azure Cloud", category: "Cloud" },
     { icon: <Jenkinslogo size={80} label="Jenkins" />, title: "Jenkins", category: "CI/CD" },
     { icon: <GitAnimation size={80} />, title: "Git", category: "CI/CD" },
     { icon: <GitHubAnimation size={80} />, title: "GitHub", category: "CI/CD" },

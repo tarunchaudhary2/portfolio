@@ -10,13 +10,13 @@ const Azurecloudlogo: React.FC<AzurecloudlogoProps> = ({ size = 80, label = 'AWS
     <div className="flex flex-col items-center justify-center gap-2">
       {/* Icon */}
       <img
-        src="/icons/Azure_Cloud.svg" // Public folder path
+        src="/icons/azurecloud.png" // Public folder path
         alt={label}
-        style={{ width: size, height: size }}
+        style={{ width: 200, height: size }}
       />
 
       {/* Label */}
-      <p className="text-white font-medium">{label}</p>
+      <p className="text-white font-medium pt-5">{label}</p>
     </div>
   );
 };
