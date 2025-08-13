@@ -4,6 +4,7 @@ import { Server, Cloud, Database, Lock, Code, LineChart, Github, Dribbble } from
 import { sectionPadding } from '../styles/styles';
 import { motion } from 'framer-motion';
 import Logo from '../logo/logoImg';
+import TodoappLogo from '../lottie_animation/todoappicon';
 
 type projectProps = {
   icon: React.ReactNode;
@@ -94,6 +95,15 @@ const Projects = () => {
       image: "/images/portfolioss.png",
       githubLink: "https://github.com/tarunchaudhary2/portfolio",
       dribbbleLink: "http://3.111.170.116:3000/",
+    },
+    {
+      icon: <TodoappLogo />,
+      title: "Todo Application",
+      description:
+        "Todo Application with add, update and deletion of new or old items or tasks in the list. Simple and easy to use UI",
+      image: "/images/todoappss.png",
+      githubLink: "https://github.com/tarunchaudhary2/todoapp",
+      dribbbleLink: "https://todoapp-nine-henna.vercel.app/",
     },
   ];
 
