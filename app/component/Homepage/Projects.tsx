@@ -26,7 +26,7 @@ const ProjectCard = ({ icon, title, description, image, githubLink, dribbbleLink
   return (
     <motion.div
       variants={fadeInUp}
-      className="bg-white/10 border border-white/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/20 mx-auto flex flex-col justify-between"
+      className="bg-white/10 border border-white/20 backdrop-blur-lg shadow-lg p-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:bg-white/20 mx-auto flex flex-col justify-between"
     >
       <div>
         {/* Icon */}
@@ -97,10 +97,10 @@ const Projects = () => {
       dribbbleLink: "http://3.111.170.116:3000/",
     },
     {
-      icon: <TodoappLogo />,
-      title: "Todo Application",
+      icon: <Logo />,
+      title: " 📝 Todo Application",
       description:
-        "Todo Application with add, update and deletion of new or old items or tasks in the list. Simple and easy to use UI",
+        "This application is built with add, update, and delete functionality for managing new or existing tasks. Features a clean, responsive UI compatible with desktop, tablet, and mobile. Built with modern front-end tech for smooth performance and can be deployed on Vercel, Netlify, or AWS.",
       image: "/images/todoappss.png",
       githubLink: "https://github.com/tarunchaudhary2/todoapp",
       dribbbleLink: "https://todoapp-nine-henna.vercel.app/",

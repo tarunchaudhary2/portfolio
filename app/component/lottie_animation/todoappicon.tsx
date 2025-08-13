@@ -5,9 +5,9 @@ interface TodoappLogoProps {
   label?: string; // Optional prop for custom label
 }
 
-const TodoappLogo: React.FC<TodoappLogoProps> = ({ size = 80}) => {
+const TodoappLogo: React.FC<TodoappLogoProps> = ({ size = 40}) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
+    <div>
       {/* Icon */}
       <img
         src="/icons/todo.png" // Public folder path
