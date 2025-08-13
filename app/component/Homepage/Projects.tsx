@@ -119,7 +119,7 @@ const Projects = () => {
         <motion.div variants={fadeInUp} className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-2">My Projects</h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Tailored Cloud & DevOps solutions to streamline development, enhance scalability, and ensure secure, reliable deployments
+            Innovative web and cloud applications designed to improve productivity, deliver seamless user experiences, and showcase modern development best practices.
           </p>
         </motion.div>
 

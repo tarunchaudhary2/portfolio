@@ -98,6 +98,9 @@ const Skills = () => {
         {/* Title */}
         <motion.div variants={fadeInUp} className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-2">Skills</h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Proficient in a broad range of cloud platforms, automation tools, programming languages, and monitoring solutions for end-to-end development.
+          </p>
           </motion.div>
 
         {/* Filter Buttons */}

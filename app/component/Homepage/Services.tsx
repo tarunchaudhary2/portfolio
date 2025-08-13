@@ -82,7 +82,7 @@ const Services = () => {
         >
           <h2 className="text-4xl font-bold mb-2">Services</h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Tailored Cloud & DevOps solutions to streamline development, enhance scalability, and ensure secure, reliable deployments
+            End-to-end cloud, DevOps, and security solutions to accelerate delivery, optimize performance, and ensure reliability at scale.
           </p>
         </motion.div>
 
