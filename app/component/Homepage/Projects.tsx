@@ -94,7 +94,7 @@ const Projects = () => {
         "Developed a personal portfolio website highlighting my Experience, Services, Skills, Projects and certifications. This website is developed with tailwind css with responsive design compatible with Desktop, tablets and Mobiles. The Website is hosted on vercel app which is a free hosting platform for a certain amount of time for portfolios websites.",
       image: "/images/portfolioss.png",
       githubLink: "https://github.com/tarunchaudhary2/portfolio",
-      dribbbleLink: "http://3.111.170.116:3000/",
+      dribbbleLink: "https://portfolio-two-xi-39.vercel.app/",
     },
     {
       icon: <Logo />,
