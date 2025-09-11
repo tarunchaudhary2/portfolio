@@ -179,7 +179,7 @@ const Profile = (props: Props) => {
                         <span className="absolute inset-0 bg-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out opacity-30"></span>
                     </button>
                     <button className="border border-gray-600 hover:border-purple-400 text-white font-medium py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 hover:shadow-lg relative overflow-hidden group">
-                        <Link href="https://drive.google.com/file/d/1iq4fjfXkO2wiBHPIAUHu19bTKX2JVNT6/view?usp=sharing" target='_blank' className="relative z-10">Download CV</Link>
+                        <Link href="https://drive.google.com/file/d/1DrWs9Z_xNR4l948Dqb46pSHlD32m14h9/view?usp=sharing" target='_blank' className="relative z-10">Download CV</Link>
                         <span className="absolute inset-0 bg-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out opacity-20"></span>
                     </button>
                 </div>
