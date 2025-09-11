@@ -55,7 +55,7 @@ function AboutSection({}: Props) {
                 Adept at version control and collaborative workflows with Git and GitHub Actions, delivering projects that reduce deployment time, improve scalability, and align with business goals. Passionate about automation and cloud innovation, I continuously seek to enhance efficiency and bring value through modern DevOps practices.
               </p>
               <button 
-              onClick={() => window.open('https://drive.google.com/file/d/1iq4fjfXkO2wiBHPIAUHu19bTKX2JVNT6/view?usp=sharing', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1DrWs9Z_xNR4l948Dqb46pSHlD32m14h9/view?usp=sharing', '_blank')}
               className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-md flex items-center gap-2 transition-colors">
                 <Download size={18} />
                 Download CV
