@@ -41,15 +41,15 @@ function AboutSection({}: Props) {
           >
             <h2 className="text-3xl font-bold mb-1">About Me</h2>
             <p className="text-purple-600 text-sm mb-6">
-              Engineer - Cloud & Infra services
+              DevOps Engineer
             </p>
 
             <div className="space-y-4">
               <p className="text-gray-300">
-                Cloud & Infrastructure Engineer with 2+ years of professional experience in designing, deploying, and managing scalable cloud solutions and DevOps pipelines. Skilled in leveraging Azure DevOps, AWS Cloud, Terraform, Docker, and Kubernetes to automate infrastructure, streamline deployments, and ensure high availability.
+                DevOps Engineer with 2.4+ years of professional experience in designing, deploying, and managing scalable cloud solutions and CI/CD pipelines. Skilled in leveraging Azure DevOps, AWS Cloud, Terraform, Docker, and Kubernetes to automate infrastructure, streamline deployments, and ensure high availability.
               </p>
               <p className="text-gray-300">
-                Proficient in CI/CD pipeline creation, containerized application deployment, and infrastructure orchestration using tools like PowerShell, Bash, and Python. Experienced in monitoring and optimizing applications with Prometheus, Grafana, and AWS CloudWatch, ensuring performance, reliability, and security.
+                Proficient in CI/CD pipeline creation, containerized application deployment, and infrastructure orchestration using tools like Docker, K8s, terraform. Experienced in monitoring and optimizing applications with Prometheus, Grafana, and AWS CloudWatch, ensuring performance, reliability, and security.
               </p>
               <p className="text-gray-300">
                 Adept at version control and collaborative workflows with Git and GitHub Actions, delivering projects that reduce deployment time, improve scalability, and align with business goals. Passionate about automation and cloud innovation, I continuously seek to enhance efficiency and bring value through modern DevOps practices.

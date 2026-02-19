@@ -8,6 +8,19 @@ import { images } from '@/public/images';
 
 const experiences = [
   {
+    role: 'DevOps Engineer',
+    company: 'NaturNest AI',
+    date: '29 Sep 2025 – Present',
+    icon: images.naturNest,
+    points: [
+      'Design and implement CI/CD pipelines for application deployment and automation',
+      'Manage cloud infrastructure and containerized applications using Kubernetes and Docker',
+      'Automate infrastructure provisioning using Infrastructure as Code tools',
+      'Monitor and optimize application performance and system reliability',
+      'Regularly deploy applications on baremetal servers using Kubernetes and Docker, leveraging CI/CD pipelines to build applications and publish artifacts to Azure Blob Storage, then execute automated Bash scripts within the CD pipeline to orchestrate deployments.',
+    ],
+  },
+  {
     role: 'Engineer - Cloud & Infra Services',
     company: 'LTIMindtree',
     date: 'Jun 2023 – Present',

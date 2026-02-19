@@ -139,7 +139,7 @@ const Profile = (props: Props) => {
                             WebkitTextFillColor: 'transparent',
                             animation: 'shine 3s linear infinite'
                         }}>
-                        Engineer - Cloud & Infra Services
+                        DevOps Engineer
                     </h2>
 
                     <div className="flex space-x-4 mb-12">

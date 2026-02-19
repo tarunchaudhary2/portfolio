@@ -37,6 +37,11 @@ const Services = () => {
   const services = [
     {
       icon: <Cloud size={32} />,
+      title: "Baremetal Infrastructure",
+      description: "Architect and manage baremetal physical servers with Kubernetes deployment, to automate container orchestration, and application lifecycle management for on-premises and edge environments"
+    },
+    {
+      icon: <Cloud size={32} />,
       title: "Cloud Infrastructure",
       description: "Architect and manage scalable cloud environments on Azure and AWS using Infrastructure as Code (Terraform, Bicep, ARM Templates, AWS CloudFormation) to automate provisioning and reduce deployment time"
     },
@@ -48,7 +53,7 @@ const Services = () => {
     {
       icon: <Server size={32} />,
       title: "Kubernetes & Containerization",
-      description: "Deploy, orchestrate, and scale containerized applications with Docker, Azure AKS, and AWS EKS for improved resilience, scalability, and resource efficiency."
+      description: "Deploy, orchestrate, and scale containerized applications with Docker, Azure AKS, AWS EKS and k8s on baremetal for improved resilience, scalability, and resource efficiency."
     },
     {
       icon: <Lock size={32} />,
@@ -58,7 +63,7 @@ const Services = () => {
     {
       icon: <Database size={32} />,
       title: "Database Management",
-      description: "Configure, monitor, and optimize cloud databases such as Azure SQL, AWS RDS, MySQL, and PostgreSQL for high performance and availability."
+      description: "Configure, monitor, and optimize databases such as MySQL, MongoDB, and PostgreSQL for high performance and availability."
     },
     {
       icon: <LineChart size={32} />,

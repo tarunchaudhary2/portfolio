@@ -25,6 +25,9 @@ import MongoDBLogo from "../lottie_animation/mongodb";
 import PythonLogo from "../lottie_animation/python";
 import ReactLogo from "../lottie_animation/react";
 import NodeLogo from "../lottie_animation/node";
+import GoogleCloudlogo from "../lottie_animation/googlecloud";
+import PostgreSQLlogo from "../lottie_animation/postgresql";
+import GKSlogo from "../lottie_animation/gks";
 
 type ServiceProps = {
   icon: React.ReactNode;
@@ -44,6 +47,7 @@ const Skills = () => {
   const skillsData: ServiceProps[] = [
     { icon: <AWScloudlogo size={80} label="AWS Cloud" />, title: "AWS Cloud", category: "Cloud" },
     { icon: <Azurecloudlogo size={60} label="Azure Cloud" />, title: "Azure Cloud", category: "Cloud" },
+    { icon: <GoogleCloudlogo size={80} label="Google Cloud" />, title: "Google Cloud", category: "Cloud" },
     { icon: <Jenkinslogo size={80} label="Jenkins" />, title: "Jenkins", category: "CI/CD" },
     { icon: <GitAnimation size={80} />, title: "Git", category: "CI/CD" },
     { icon: <GitHubAnimation size={80} />, title: "GitHub", category: "CI/CD" },
@@ -51,6 +55,7 @@ const Skills = () => {
     { icon: <DockerLogo size={80} label="Docker"/>, title: "Docker", category: "Containerization" },
     { icon: <ECSAnimation size={70} />, title: "ECS", category: "Containerization" },
     { icon: <EKSAnimation size={70} />, title: "EKS", category: "Orchestration" },
+    { icon: <GKSlogo size={80} label="GKS" />, title: "GKS", category: "Orchestration" },
     { icon: <AKSAnimation size={80} />, title: "AKS", category: "Orchestration" },
     { icon: <KubernetesLogo size={80} label="Kubernetes"/>, title: "Kubernetes", category: "Orchestration" },
     { icon: <PowershellAnimation size={70} label="Powershell"/>, title: "Powershell", category: "Scripting" },
@@ -59,6 +64,7 @@ const Skills = () => {
     { icon: <ReactLogo size={80} />, title: "React", category: "Programming Languages" },
     { icon: <NodeLogo size={80} />, title: "Node", category: "Programming Languages" },
     { icon: <SQLAnimation size={80} />, title: "SQL", category: "Databases" },
+    { icon: <PostgreSQLlogo size={80} label="PostgreSQL" />, title: "PostgreSQL", category: "Databases" },
     { icon: <MongoDBLogo size={80} />, title: "MongoDB", category: "Databases" },
     { icon: <AWSCloudwatchLogo size={70} label="AWS CloudWatch"/>, title: "AWS CloudWatch", category: "Monitoring" },
     { icon: <PrometheusLogo size={70} label="Prometheus"/>, title: "Prometheus", category: "Monitoring" },
