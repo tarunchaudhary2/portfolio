@@ -10,7 +10,7 @@ const experiences = [
   {
     role: 'DevOps Engineer',
     company: 'NaturNest AI',
-    date: '29 Sep 2025 – Present',
+    date: 'Sep 2025 – Present',
     icon: images.naturNest,
     points: [
       'Design and implement CI/CD pipelines for application deployment and automation',
@@ -23,7 +23,7 @@ const experiences = [
   {
     role: 'Engineer - Cloud & Infra Services',
     company: 'LTIMindtree',
-    date: 'Jun 2023 – Present',
+    date: 'Jun 2023 – Sep 2025',
     icon: images.wema,
     points: [
       'Utilized Azure DevOps and Git for version control and collaborative workflows, designing and implementing automated CI/CD pipelines with Infrastructure as Code tools like Terraform and AWS CloudFormation to streamline cloud provisioning.',
