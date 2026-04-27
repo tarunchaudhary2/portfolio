@@ -54,12 +54,13 @@ function AboutSection({}: Props) {
               <p className="text-gray-300">
                 Adept at version control and collaborative workflows with Git and GitHub Actions, delivering projects that reduce deployment time, improve scalability, and align with business goals. Passionate about automation and cloud innovation, I continuously seek to enhance efficiency and bring value through modern DevOps practices.
               </p>
-              <button 
-              onClick={() => window.open('https://drive.google.com/file/d/1DrWs9Z_xNR4l948Dqb46pSHlD32m14h9/view?usp=sharing', '_blank')}
-              className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-md flex items-center gap-2 transition-colors">
+              <a
+                href="https://drive.google.com/uc?export=download&id=1LYlXoHVDNpvUmW39-r4VbikzdeWrFQsC"
+                download="Tarun_Chaudhary_CV.pdf"
+                className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-md inline-flex items-center gap-2 transition-colors w-fit">
                 <Download size={18} />
                 Download CV
-              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>
