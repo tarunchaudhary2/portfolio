@@ -18,6 +18,11 @@ const experiences = [
       'Automate infrastructure provisioning using Infrastructure as Code tools',
       'Monitor and optimize application performance and system reliability',
       'Regularly deploy applications on baremetal servers using Kubernetes and Docker, leveraging CI/CD pipelines to build applications and publish artifacts to Azure Blob Storage, then execute automated Bash scripts within the CD pipeline to orchestrate deployments.',
+      'Architected Terraform-managed GKE clusters (asia-south2) with VPC, Cloud NAT static egress, Workload Identity, and Google Secret Manager wired in via External Secrets Operator.',
+      'Built Helm charts and atomic CI/CD workflows on GitHub Actions and Azure DevOps Pipelines with rollback-on-failure releases across backend, frontend, and admin services.',
+      'Operated stateful in-cluster workloads — MySQL, PostgreSQL/TimescaleDB, MongoDB, Redis, RabbitMQ, MinIO — on Longhorn-backed persistent volumes with automated backup and seeding.',
+      'Scaled MediaMTX-based RTSP → WebRTC streaming infrastructure to 100+ cameras with horizontal node autoscaling and a Redis-backed service registry.',
+      'Hardened production ingress with GCE Load Balancer, GKE Managed Certificates, Nginx + Let\'s Encrypt, and global static IPs for partner whitelisting and end-to-end TLS.',
     ],
   },
   {
@@ -77,9 +82,9 @@ const Experience = () => {
                     <h3 className="text-xl font-semibold text-purple-400 mb-3">{exp.role}</h3>
                     <h4 className="md:text-lg mb-1 text-white">{exp.company}</h4>
                     <span className="text-sm text-gray-400">{exp.date}</span>
-                    <ul className="mt-4 list-disc list-inside space-y-2 text-sm text-gray-300">
+                    <ul className="mt-4 list-disc list-outside pl-5 space-y-2 text-sm text-gray-300 marker:text-purple-400">
                       {exp.points.map((point, idx) => (
-                        <li key={idx}>{point}</li>
+                        <li key={idx} className="pl-1">{point}</li>
                       ))}
                     </ul>
                   </div>
