@@ -90,11 +90,10 @@ export const experience: Experience[] = [
   },
 ];
 
-export const education = {
-  degree: "Bachelor of Computer Applications",
-  school: "GLA University, Mathura",
-  period: "2020 – 2023",
-};
+export const education = [
+  { degree: "Master of Computer Applications (MCA)", school: "GLA University, Mathura", period: "Graduated 2026" },
+  { degree: "Bachelor of Computer Applications (BCA)", school: "GLA University, Mathura", period: "2020 – 2023" },
+];
 
 export type Product = { title: string; tag: string; kind: Kind; icon: string; tagline: string; stack: string[] };
 

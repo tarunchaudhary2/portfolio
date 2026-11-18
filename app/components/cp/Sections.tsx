@@ -47,7 +47,9 @@ export function Career() {
             </article>
           </div>
         ))}
-        <article className="commit reveal" data-node="root"><p className="sha">0000001 (root)</p><h3>{education.degree}</h3><p className="meta">{education.school} · {education.period}</p></article>
+        {education.map((ed, i) => (
+          <article key={ed.degree} className="commit reveal" data-node={i === education.length - 1 ? "root" : `edu${i}`}><p className="sha">{i === education.length - 1 ? "0000001 (root)" : "3e9a1d2"}</p><h3>{ed.degree}</h3><p className="meta">{ed.school} · {ed.period}</p></article>
+        ))}
       </div>
     </div></section>
   );
