@@ -30,7 +30,6 @@ const Navbar = (props: Props) => {
     setIsMenuOpen(false); // Close mobile menu if open
 
     const element = document.getElementById(sectionId);
-    console.log("Attempting to scroll to:", sectionId, element); // Debug log
 
     if (element) {
       element.scrollIntoView({

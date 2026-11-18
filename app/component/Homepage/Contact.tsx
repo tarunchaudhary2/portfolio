@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -17,7 +21,7 @@ const Contact = () => {
 
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
+    if (publicKey) emailjs.init(publicKey);
   }, []);
 
   const handleChange = (
@@ -35,20 +39,25 @@ const Contact = () => {
     setIsSubmitting(true);
     setError("");
 
+    if (!serviceId || !templateId || !publicKey) {
+      setError("Contact form is not configured. Please email me directly.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_r7zwf18",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_9w7995h",
+      await emailjs.send(
+        serviceId,
+        templateId,
         {
           title: formData.subject,   // goes to {{title}}
           name: formData.fullName,   // goes to {{name}}
           email: formData.email,     // goes to {{email}}
           message: formData.message, // goes to {{message}}
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "Dlm1taV1AOWF7slKI"
+        publicKey
       );
 
-      console.log("Email sent successfully:", response);
       setSubmitted(true);
 
       setTimeout(() => {

@@ -1,44 +1,37 @@
-import type { Metadata } from "next";
-import { Sora } from "next/font/google";
-import "./globals.scss";
+import type { Metadata, Viewport } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import Layout from "./component/Layout";
-import { ThemeProvider } from "./providers/ThemeProvider"; // ✅ our wrapper
 import { ReactNode } from "react";
+import "./globals.scss";
+import "./cp.css";
+import { seo, siteUrl } from "./lib/site";
+import { profile } from "./lib/portfolio";
+
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Tarun Chaudhary's portfolio",
-  description: "A portfolio website for Tarun Chaudhary",
-  icons: {
-    icon: "/icons/favicon.png ", // or "/favicon.png"
-  },
+  metadataBase: new URL(siteUrl),
+  title: seo.title,
+  description: seo.description,
+  keywords: seo.keywords,
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  alternates: { canonical: "/" },
+  openGraph: { type: "profile", url: "/", siteName: profile.name, title: seo.title, description: seo.description, locale: "en_IN" },
+  twitter: { card: "summary_large_image", title: seo.title, description: seo.description },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  icons: { icon: "/icons/favicon.png" },
 };
 
-const soraFont = Sora({ subsets: ["latin"] });
+export const viewport: Viewport = { themeColor: "#05080d", colorScheme: "dark" };
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={soraFont.className} suppressHydrationWarning>
-        <NextTopLoader
-          color="#F3F3F3"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={true}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #F5888E,0 0 5px #F5888E"
-        />
-
-        <ThemeProvider>
-          <Layout>{children}</Layout>
-        </ThemeProvider>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+      <body>
+        <NextTopLoader color="#3ee6ff" height={2} showSpinner={false} shadow="0 0 10px #3ee6ff" />
+        {children}
       </body>
     </html>
   );

@@ -231,7 +231,6 @@ const Projects = () => {
       description:
         "Multi-tenant Video Management System for traffic and surveillance: RTSP → WebRTC live streaming, MediaMTX-driven fMP4 recording, timeline playback, and a 100+ camera video wall.",
       image: "/images/VMS.png",
-      dribbbleLink: "https://develop.vms.infraxai.cloud/live",
       privateRepo: true,
       details: {
         overview:
@@ -417,7 +416,7 @@ const Projects = () => {
         "Personal portfolio site built with Next.js 15, React 19, Tailwind CSS, and Framer Motion. Fully responsive and deployed on Vercel.",
       image: "/images/portfolioss.png",
       githubLink: "https://github.com/tarunchaudhary2/portfolio",
-      dribbbleLink: "https://portfolio-two-xi-39.vercel.app/",
+      dribbbleLink: "https://www.imtarunchaudhary.dev/",
       details: {
         overview:
           "Personal portfolio website built with Next.js 15 and React 19 to showcase my experience, services, skills, projects, and certifications. Styled with Tailwind CSS, animated with Framer Motion and Lottie, fully responsive across desktop, tablet, and mobile, and deployed on Vercel.",

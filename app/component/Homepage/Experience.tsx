@@ -8,9 +8,22 @@ import { images } from '@/public/images';
 
 const experiences = [
   {
+    role: 'DevOps Team Lead',
+    company: 'NaturNest AI · InfraX AI',
+    date: 'Sep 2026 – Present',
+    icon: images.naturNest,
+    points: [
+      'Lead a team of 9 engineers: daily standups, task assignment, 1:1s and the PR review/merge gate.',
+      'Own production releases for Cygnus and ATMS — develop → main promotion, prod deploys and rollbacks.',
+      'Run incident response and root-cause analysis across live highway and plant sites.',
+      'Rolled out AI co-developers to the team and automated the daily standup draft.',
+      'Drive architecture for worker autoscaling and large-scale camera federation.',
+    ],
+  },
+  {
     role: 'DevOps Engineer',
-    company: 'NaturNest AI',
-    date: 'Sep 2025 – Present',
+    company: 'NaturNest AI · InfraX AI',
+    date: 'Sep 2025 – Sep 2026',
     icon: images.naturNest,
     points: [
       'Design and implement CI/CD pipelines for application deployment and automation',

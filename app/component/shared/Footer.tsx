@@ -1,6 +1,5 @@
 import React from 'react'
-import { Linkedin, AtSign, Twitter, Instagram, Facebook, Dribbble, Github } from 'lucide-react'
-// import { Instagram, AtSign, Linkedin, Dribbble, Github } from 'lucide-react';
+import { Linkedin, AtSign, Github } from 'lucide-react'
 import Logo from '../logo/logoImg'
 import { sectionPadding } from '../styles/styles'
 
@@ -16,10 +15,8 @@ const Footer = () => {
           <div className="flex space-x-6">
             <a 
               href="mailto:imtarunchaudhary2@gmail.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
               className="text-gray-400 hover:text-purple-400 transition-colors"
-              aria-label="AtSign"
+              aria-label="Email"
             >
               <AtSign size={20} />
             </a>
@@ -40,15 +37,6 @@ const Footer = () => {
               aria-label="GitHub"
             >
               <Github size={20} />
-            </a>
-            <a 
-              href="http://3.111.170.116:3000/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-purple-400 transition-colors"
-              aria-label="Dribble"
-            >
-              <Dribbble size={20} />
             </a>
             </div>
         </div>

@@ -39,7 +39,7 @@ const Education = () => {
       type: "certification",
       icon: <ShieldCheck className="text-purple-400" size={24} />,
       title: "Java Programming by Great Learning",
-      subtitle: "Certificate of completion of Java Programing",
+      subtitle: "Certificate of completion of Java Programming",
       bgColor: "bg-gray-800/50",
       borderColor: "border-purple-600/30",
       certLink:
@@ -77,7 +77,7 @@ const Education = () => {
       type: 'certification',
       icon: <ShieldCheck className="text-purple-400" size={24} />,
       title: 'Javascript & React Bootcamp by GDG Ranchi',
-      subtitle: 'Certificate of completion of Java Programing',
+      subtitle: 'Certificate of completion of the JavaScript & React bootcamp',
       bgColor: 'bg-gray-800/50',
       borderColor: 'border-purple-600/30',
       certLink: "https://drive.google.com/file/d/1NJ-N3_voy9_sobLuhOacY5SRAM9aQHzK/view?usp=sharing"
@@ -117,15 +117,6 @@ const Education = () => {
       bgColor: 'bg-gray-800/50',
       borderColor: 'border-purple-600/30',
       certLink: "https://www.hackerrank.com/certificates/12db183b236b"
-    },
-    {
-      type: 'certification',
-      icon: <ShieldCheck className="text-purple-400" size={24} />,
-      title: 'Problem Solving (Basic)',
-      subtitle: 'Problem Solving Basic by HackerRank',
-      bgColor: 'bg-gray-800/50',
-      borderColor: 'border-purple-600/30',
-      certLink: "https://www.hackerrank.com/certificates/f646bb091922"
     },
     {
       type: 'certification',

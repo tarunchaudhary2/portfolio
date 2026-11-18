@@ -1,10 +1,21 @@
 "use client"
 import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
-import { Instagram, AtSign, Linkedin, Dribbble, Github } from 'lucide-react';
-import { images } from '@/public/images';
+import { AtSign, Linkedin, Github } from 'lucide-react';
 import { sectionPadding } from '../styles/styles';
-import Link from 'next/link';
+import { yearsOfExperience } from '@/app/lib/experience';
+
+type Particle = { size: number; top: number; left: number; duration: number; opacity: number; scale: number };
+
+// Generated client-side only so server and client markup match.
+const makeParticles = (n: number): Particle[] =>
+    Array.from({ length: n }, () => ({
+        size: Math.random() * 100 + 50,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        duration: Math.random() * 10 + 20,
+        opacity: Math.random() * 0.5,
+        scale: Math.random() * 0.8 + 0.2,
+    }));
 
 type Props = {};
 
@@ -14,22 +25,13 @@ const Profile = (props: Props) => {
     const statsRef = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isInView, setIsInView] = useState(false);
+    const [particles, setParticles] = useState<Particle[]>([]);
 
     // Function to handle smooth scrolling
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false); // Close mobile menu if open
   
-    const element = document.getElementById(sectionId);
-    console.log("Attempting to scroll to:", sectionId, element); // Debug log
-  
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    } else {
-      console.warn(`Element with ID "${sectionId}" not found`);
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
     // Counter animation function
@@ -75,15 +77,16 @@ const Profile = (props: Props) => {
     // Trigger counter animation when stats section comes into view
     useEffect(() => {
         if (isInView) {
-            animateCounter(0, 2, 1500, setStats, 'experience');
-            animateCounter(0, 4, 2000, setStats, 'projects');
-            animateCounter(0, 21, 2500, setStats, 'clients');
+            animateCounter(0, yearsOfExperience(), 1500, setStats, 'experience');
+            animateCounter(0, 5, 2000, setStats, 'projects');
+            animateCounter(0, 24, 2500, setStats, 'clients');
         }
     }, [isInView]);
 
     useEffect(() => {
         // Trigger animations after component mounts
         setIsLoaded(true);
+        setParticles(makeParticles(8));
     }, []);
 
     return (
@@ -93,18 +96,18 @@ const Profile = (props: Props) => {
 
             {/* Animated particles */}
             <div className="absolute inset-0 overflow-hidden z-0">
-                {[...Array(8)].map((_, i) => (
+                {particles.map((p, i) => (
                     <div
                         key={i}
                         className="absolute rounded-full bg-purple-600 bg-opacity-20"
                         style={{
-                            width: `${Math.random() * 100 + 50}px`,
-                            height: `${Math.random() * 100 + 50}px`,
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            animation: `float ${Math.random() * 10 + 20}s infinite linear`,
-                            opacity: Math.random() * 0.5,
-                            transform: `scale(${Math.random() * 0.8 + 0.2})`,
+                            width: `${p.size}px`,
+                            height: `${p.size}px`,
+                            top: `${p.top}%`,
+                            left: `${p.left}%`,
+                            animation: `float ${p.duration}s infinite linear`,
+                            opacity: p.opacity,
+                            transform: `scale(${p.scale})`,
                         }}
                     />
                 ))}
@@ -139,15 +142,10 @@ const Profile = (props: Props) => {
                             WebkitTextFillColor: 'transparent',
                             animation: 'shine 3s linear infinite'
                         }}>
-                        DevOps Engineer
+                        DevOps Team Lead
                     </h2>
 
                     <div className="flex space-x-4 mb-12">
-                        {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
-                            style={{ animationDuration: '2s', animationDelay: '300ms', animationIterationCount: 1 }}>
-                            <Instagram size={16} />
-                        </a> */}
                         <a href="mailto:imtarunchaudhary2@gmail.com"
                             className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
                             style={{ animationDuration: '2s', animationDelay: '400ms', animationIterationCount: 1 }}>
@@ -162,11 +160,6 @@ const Profile = (props: Props) => {
                             className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
                             style={{ animationDuration: '2s', animationDelay: '600ms', animationIterationCount: 1 }}>
                             <Github size={16} />
-                        </a>
-                        <a href="http://3.111.170.116:3000/" target="_blank" rel="noopener noreferrer"
-                            className={`w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 transform hover:scale-110 cursor-pointer ${isLoaded ? 'animate-bounce' : 'opacity-0'}`}
-                            style={{ animationDuration: '2s', animationDelay: '600ms', animationIterationCount: 1 }}>
-                            <Dribbble size={16} />
                         </a>
                     </div>
                 </div>
@@ -191,11 +184,11 @@ const Profile = (props: Props) => {
                 >
                     <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
                         <h3 className="text-xl font-bold text-purple-600">{stats.experience}+</h3>
-                        <p className="text-xs sm:text-sm text-gray-300 font-semibold">Experiences</p>
+                        <p className="text-xs sm:text-sm text-gray-300 font-semibold">Years Experience</p>
                     </div>
                     <div className="flex-1 border-r border-gray-700 px-4 transform transition-all duration-500 hover:scale-105">
                         <h3 className="text-xl font-bold text-purple-600">{stats.projects}+</h3>
-                        <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Project done</p>
+                        <p className="text-xs sm:text-sm font-semibold text-gray-300 text-nowrap">Projects Done</p>
                     </div>
                     <div className="flex-1 px-4 transform transition-all duration-500 hover:scale-105">
                         <h3 className="text-xl font-bold text-purple-600">{stats.clients}+</h3>

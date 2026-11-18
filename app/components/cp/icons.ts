@@ -1,0 +1,54 @@
+// Illustrated icon set (32px grid). Classes: f=fill, s=stroke, h/w=white highlight; others animate.
+export const ICX: Record<string, string> = {
+cygnus:'<circle class="s sp" cx="16" cy="15" r="6" stroke-dasharray="2 3"/><path class="s" style="stroke-opacity:.75" d="M16 4L16 15L15 22L13 28M5 10L10 13L16 15L22 13L27 9"/><circle class="f" cx="16" cy="15" r="3.4"/><circle class="h" cx="16" cy="15" r="1.4"/><circle class="h tw" cx="16" cy="4" r="1.9"/><circle class="h" cx="5" cy="10" r="1.4"/><circle class="h tw" style="animation-delay:.8s" cx="27" cy="9" r="1.5"/><circle class="h" cx="13" cy="28" r="1.4"/><circle class="h" cx="10" cy="13" r="1"/><circle class="h" cx="22" cy="13" r="1"/><circle class="h tw" style="animation-delay:1.4s" cx="15" cy="22" r="1"/>',
+cctv:'<path class="f" d="M4 9.5L21 5l2.6 8.6L6.5 18z"/><path class="s" d="M23.6 13.6L27 12.5l-1.2-4.4-3.4 1"/><circle class="h" cx="25" cy="10.8" r="1.3"/><path class="s" d="M11 16.5l1.5 5.5H6M6 18v10"/><circle class="h tw" style="fill:#ff5d6c" cx="8.5" cy="11.6" r="1.3"/>',
+gantry:'<path class="f tw" style="stroke:none" d="M11 13l-4.5 11h9z"/><path class="f tw" style="stroke:none;animation-delay:1.2s" d="M21 13l-4.5 11h9z"/><path class="s" d="M6 29V7M26 29V7"/><rect class="f" x="4" y="5" width="24" height="5" rx="1.5"/><rect class="f" x="9" y="10" width="4" height="3" rx=".8"/><rect class="f" x="19" y="10" width="4" height="3" rx=".8"/><path class="w" style="stroke-opacity:.5" d="M2 29h28"/><circle class="h" cx="11" cy="7.5" r=".9"/><circle class="h" cx="21" cy="7.5" r=".9"/>',
+callbox:'<rect class="f" x="10" y="4" width="12" height="24" rx="3"/><path class="w" style="stroke-opacity:.7" d="M13 9h6M13 11.5h6M13 14h6"/><circle class="s" cx="16" cy="21" r="3"/><circle class="h tw" cx="16" cy="21" r="1.3"/><path class="s wv" d="M25 6a6 6 0 0 1 2.5 5"/><path class="s wv" style="animation-delay:.3s" d="M27.5 3a10 10 0 0 1 3.5 8"/><path class="s" d="M7 28h18"/>',
+edgechip:'<rect class="f" x="8" y="8" width="16" height="16" rx="3.5"/><path class="s" d="M12 4v4M16 4v4M20 4v4M12 24v4M16 24v4M20 24v4M4 12h4M4 16h4M4 20h4M24 12h4M24 16h4M24 20h4"/><path class="w" style="stroke-opacity:.55" d="M12.5 13h7M12.5 13l3.5 6.5M19.5 13L16 19.5"/><circle class="h" cx="12.5" cy="13" r="1.4"/><circle class="h" cx="19.5" cy="13" r="1.4"/><circle class="h tw" cx="16" cy="19.5" r="1.7"/>',
+ota:'<path class="f" d="M9 17a5 5 0 0 1 .4-10A7.5 7.5 0 0 1 23.5 8.5 4.3 4.3 0 0 1 23 17z"/><g class="dn"><path class="w" d="M16 10.5v9M12.5 16L16 19.5l3.5-3.5"/></g><rect class="f" x="10" y="24" width="12" height="5" rx="1.5"/><circle class="h tw" cx="13" cy="26.5" r=".9"/><path class="w" style="stroke-opacity:.5" d="M16 26.5h3.5"/>',
+tunnel:'<path class="f" d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path class="w" d="M12.5 15v-2.5a3.5 3.5 0 0 1 7 0V15"/><rect class="s" style="fill:#0a1018" x="11" y="15" width="10" height="8" rx="2"/><circle class="h tw" cx="16" cy="18.5" r="1.3"/><path class="w" d="M16 19.5v1.5"/>',
+ingress:'<circle class="f" cx="16" cy="16" r="9"/><path class="s" style="stroke-opacity:.7" d="M7 16h18M16 7c3 3 3 15 0 18M16 7c-3 3-3 15 0 18"/><g class="sp"><ellipse class="s" cx="16" cy="16" rx="14.5" ry="5" transform="rotate(-25 16 16)" stroke-dasharray="3 3"/><circle class="h" cx="29.2" cy="10" r="1.7"/></g>',
+stream:'<rect class="f" x="3" y="7" width="19" height="15" rx="2.5"/><path class="h" d="M10.5 11.5v6l5-3z"/><path class="s" d="M9 26h7M12.5 22v4"/><path class="s wv" d="M25 11a5 5 0 0 1 0 7"/><path class="s wv" style="animation-delay:.3s" d="M28 8a9 9 0 0 1 0 13"/>',
+sparkles:'<path class="f" d="M13 4l2.6 7.4L23 14l-7.4 2.6L13 24l-2.6-7.4L3 14l7.4-2.6z"/><path class="w" style="stroke-opacity:.6" d="M13 9.5v9M8.5 14h9"/><path class="h tw" d="M24 19l1.2 3.3 3.3 1.2-3.3 1.2L24 28l-1.2-3.3-3.3-1.2 3.3-1.2z"/><circle class="h tw" style="animation-delay:.7s" cx="25" cy="7" r="1.6"/>',
+tsdb:'<path class="f" d="M6 8v16c0 2.2 4.5 4 10 4s10-1.8 10-4V8"/><ellipse class="f" cx="16" cy="8" rx="10" ry="4"/><path class="s" style="stroke-opacity:.6" d="M6 16c0 2.2 4.5 4 10 4s10-1.8 10-4"/><path class="w" d="M9.5 24l3.5-3 3 2 5.5-5.5"/><circle class="h tw" cx="21.5" cy="17.5" r="1.4"/>',
+cache:'<path class="f" d="M16 3l11 6-11 6-11-6z"/><path class="f" style="opacity:.7" d="M5 9v11l11 6V15z"/><path class="f" d="M27 9v11l-11 6V15z"/><path class="w tw" d="M22.5 13l-3 4.5h3l-2 4.5"/>',
+gateway:'<path class="s dash" d="M5 6l5.5 5.5M27 6l-5.5 5.5M5 26l5.5-5.5M27 26l-5.5-5.5"/><path class="f" d="M16 8.5l6.5 3.75v7.5L16 23.5l-6.5-3.75v-7.5z"/><circle class="h" cx="5" cy="6" r="1.9"/><circle class="h" cx="27" cy="6" r="1.9"/><circle class="h" cx="5" cy="26" r="1.9"/><circle class="h" cx="27" cy="26" r="1.9"/><circle class="h tw" cx="16" cy="16" r="2.3"/>',
+neural:'<path class="s" style="stroke-opacity:.45" d="M6 9L16 6M6 9L16 16M6 9L16 26M6 23L16 6M6 23L16 16M6 23L16 26M16 6L26 11M16 16L26 11M16 26L26 11M16 6L26 21M16 16L26 21M16 26L26 21"/><circle class="f" cx="6" cy="9" r="2.6"/><circle class="f" cx="6" cy="23" r="2.6"/><circle class="f" cx="16" cy="6" r="2.6"/><circle class="h tw" cx="16" cy="16" r="2.6"/><circle class="f" cx="16" cy="26" r="2.6"/><circle class="h" cx="26" cy="11" r="2.6"/><circle class="f" cx="26" cy="21" r="2.6"/>',
+agent:'<path class="s" d="M16 10V6.5"/><circle class="h tw" cx="16" cy="5" r="1.7"/><rect class="f" x="6" y="10" width="20" height="14" rx="5"/><circle class="h bl" cx="12" cy="17" r="1.9"/><circle class="h bl" cx="20" cy="17" r="1.9"/><path class="s" d="M3 15v4M29 15v4M13 24v3M19 24v3M11 28h10"/>',
+copilot:'<circle class="f" cx="16" cy="16" r="8"/><path class="s" d="M6.5 17v-2a9.5 9.5 0 0 1 19 0v2"/><rect class="f" x="4" y="15" width="4" height="7" rx="2"/><rect class="f" x="24" y="15" width="4" height="7" rx="2"/><path class="s" d="M26 22v1.5a3.5 3.5 0 0 1-3.5 3.5H19"/><circle class="h tw" cx="18.5" cy="27" r="1.4"/><circle class="h bl" cx="13" cy="15.5" r="1.4"/><circle class="h bl" cx="19" cy="15.5" r="1.4"/><path class="w" d="M13.5 19.5c1.5 1.2 3.5 1.2 5 0"/>',
+voice:'<rect class="f" x="12" y="4" width="8" height="15" rx="4"/><path class="s" d="M8 15a8 8 0 0 0 16 0M16 23v5M12 28h8"/><path class="w" style="stroke-opacity:.6" d="M14.5 9h3M14.5 12h3"/><path class="s wv" d="M4 12v6M28 12v6"/><path class="s wv" style="animation-delay:.3s" d="M1 9.5v11M31 9.5v11"/>',
+twins:'<circle class="f" cx="12" cy="16" r="7.5"/><circle class="f" cx="20" cy="16" r="7.5"/><path class="h tw" d="M16 10.5l1.2 4.3 4.3 1.2-4.3 1.2L16 21.5l-1.2-4.3-4.3-1.2 4.3-1.2z"/>',
+vertex:'<path class="f" d="M16 4l12 22H4z"/><path class="s" style="stroke-opacity:.6" d="M16 4v14M4 26l12-8M28 26l-12-8"/><circle class="h" cx="16" cy="4" r="1.8"/><circle class="h" cx="4" cy="26" r="1.8"/><circle class="h" cx="28" cy="26" r="1.8"/><circle class="h tw" cx="16" cy="18" r="2.1"/>',
+local:'<rect class="f" x="5" y="5" width="22" height="9" rx="2.5"/><rect class="f" x="5" y="18" width="22" height="9" rx="2.5"/><circle class="h tw" cx="9.5" cy="9.5" r="1.2"/><circle class="h tw" style="animation-delay:.6s" cx="9.5" cy="22.5" r="1.2"/><path class="w" style="stroke-opacity:.6" d="M15 9.5h8M15 22.5h8"/><path class="s" d="M16 14v4"/>',
+vision:'<path class="s" d="M4 10V5h5M23 5h5v5M28 22v5h-5M9 27H4v-5"/><path class="f" d="M7 16s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle class="h" cx="16" cy="16" r="3"/><circle style="fill:#0a1018" cx="16" cy="16" r="1.2"/><path class="w scn" d="M5 16h22"/>',
+commit:'<path class="s" d="M3 16h8M21 16h8"/><circle class="f" cx="16" cy="16" r="5"/><circle class="h" cx="16" cy="16" r="1.8"/><path class="s" d="M16 11V8a3 3 0 0 1 3-3h5"/><circle class="h tw" cx="26" cy="5" r="1.7"/>',
+cube:'<path class="f" d="M16 3l11 6-11 6-11-6z"/><path class="f" style="opacity:.7" d="M5 9v11l11 6V15z"/><path class="f" d="M27 9v11l-11 6V15z"/><path class="w" style="stroke-opacity:.7" d="M19 18.5l5-2.7M19 22l5-2.7"/>',
+shieldok:'<path class="f" d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path class="w" d="M11 15.5l3.5 3.5 7-7"/>',
+tag:'<path class="f" d="M4 5h11l13 13-10 10L4 15z"/><circle class="h" cx="10" cy="10.5" r="2"/><path class="w" style="stroke-opacity:.6" d="M14 18l6-6M17 21l4-4"/>',
+rocket:'<path class="fl" d="M13.5 22.5L16 29.5l2.5-7z"/><path class="f" d="M16 3c5 3 7.5 9 6.5 15.5L19.5 21h-7l-3-2.5C8.5 12 11 6 16 3z"/><circle class="h" cx="16" cy="12" r="2.5"/><path class="s" d="M10 17l-4 4.5V26l5-3M22 17l4 4.5V26l-5-3"/>',
+cloud:'<path class="f" d="M9 24a6 6 0 0 1-.8-11.9A8 8 0 0 1 23.5 10a6.5 6.5 0 0 1-.5 14z"/><path class="w" style="stroke-opacity:.6" d="M12 19.5l5-3.5 4 3.5"/><circle class="h" cx="12" cy="19.5" r="1.5"/><circle class="h tw" cx="17" cy="16" r="1.5"/><circle class="h" cx="21" cy="19.5" r="1.5"/>',
+helm:'<g class="sp"><path class="f" d="M16 4L25.4 8.5 27.7 18.7 21.2 26.8H10.8L4.3 18.7 6.6 8.5z"/><path class="w" style="stroke-opacity:.75" d="M16 13V8.5M18.9 14.3l3.3-3.1M19.6 17.4l4.3.6M17.5 20.1l2 3.7M14.5 20.1l-2 3.7M12.4 17.4l-4.3.6M13.1 14.3l-3.3-3.1"/><circle class="h" cx="16" cy="16.5" r="2.7"/></g>',
+loop:'<path class="s" style="stroke-width:2" d="M10 11a5 5 0 1 0 0 10c4 0 8-10 12-10a5 5 0 1 1 0 10c-4 0-8-10-12-10z"/><circle class="h run" r="2"/>',
+iac:'<path class="f" d="M8 3h11l6 6v20H8z"/><path class="s" d="M19 3v6h6"/><path class="w" d="M14 15l-3 3.5 3 3.5M19 15l3 3.5-3 3.5"/>',
+monitor:'<rect class="f" x="3" y="5" width="26" height="18" rx="2.5"/><path class="s" d="M12 28h8M16 23v5"/><path class="w draw" d="M6 15h5l2-5 3 9 2.5-6 1.5 2h6"/>',
+terminal:'<rect class="f" x="3" y="5" width="26" height="22" rx="3"/><path class="s" style="stroke-opacity:.6" d="M3 10h26"/><circle class="h" cx="6.5" cy="7.6" r=".9"/><circle class="h" cx="9.5" cy="7.6" r=".9"/><path class="w" d="M8 15l4 3-4 3"/><path class="w tw" d="M15 21h7"/>'};
+
+export const SVG_NS = "http://www.w3.org/2000/svg";
+
+export function mk(tag: string, attrs: Record<string, string | number>, parent?: Element): SVGElement {
+  const el = document.createElementNS(SVG_NS, tag) as SVGElement;
+  for (const k in attrs) el.setAttribute(k, String(attrs[k]));
+  if (parent) parent.appendChild(el);
+  return el;
+}
+
+const GK: Record<string, string> = { "#2ff0c4": "v", "#ffb547": "a", "#46f08c": "g", "#ff5d6c": "r" };
+
+// Draws an icon with a soft glow behind it inside an SVG diagram.
+export function glyph(par: Element, x: number, y: number, ic: string, col: string, size: number, reduce: boolean) {
+  const k = GK[col] || "c";
+  const b = mk("circle", { cx: x, cy: y, r: size * 1.05, fill: `url(#rb-${k === "r" ? "a" : k})` }, par);
+  if (!reduce) mk("animate", { attributeName: "opacity", values: ".55;1;.55", dur: 2.6 + Math.random() * 2 + "s", repeatCount: "indefinite" }, b);
+  const g = mk("g", { class: `ix k-${k}`, transform: `translate(${x - size / 2} ${y - size / 2}) scale(${size / 32})` }, par);
+  g.innerHTML = ICX[ic] || "";
+}

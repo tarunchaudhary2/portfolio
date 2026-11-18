@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- EmailJS template: new ticket notification sent to the site owner. Paste into the template's HTML (code) editor. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
+<title>New ticket {{ticket}}</title>
+</head>
+<body style="margin:0;padding:0;background:#05080d;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{{name}} opened {{ticket}}: {{subject}}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#05080d;">
+<tr><td align="center" style="padding:32px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
+
+  <!-- header -->
+  <tr><td style="padding:0 4px 18px;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:12px;color:#46f08c;">
+    &#9679;&nbsp; ctx: tarun@prod &nbsp;<span style="color:#6f8196;">· portfolio contact form</span>
+  </td></tr>
+
+  <!-- card -->
+  <tr><td style="background:#0a1018;border:1px solid #22324a;border-radius:18px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr><td style="height:3px;background:#3ee6ff;background-image:linear-gradient(90deg,#3ee6ff,#46f08c);border-radius:18px 18px 0 0;font-size:0;line-height:0;">&nbsp;</td></tr>
+
+      <tr><td style="padding:26px 28px 6px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:12px;color:#3ee6ff;">// new ticket</td>
+          <td align="right"><span style="display:inline-block;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:12px;color:#ffb547;border:1px solid #6b4e1f;border-radius:99px;padding:3px 10px;">&#9679; open</span></td>
+        </tr></table>
+        <h1 style="margin:10px 0 4px;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-0.5px;color:#e3ebf4;">{{subject}}</h1>
+        <p style="margin:0;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:13px;color:#6f8196;">{{ticket}} &nbsp;·&nbsp; {{sent_at}}</p>
+      </td></tr>
+
+      <!-- topics -->
+      <tr><td style="padding:16px 28px 0;">
+        <span style="display:inline-block;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:12px;font-weight:700;color:#05080d;background:#3ee6ff;background-image:linear-gradient(90deg,#3ee6ff,#46f08c);border-radius:99px;padding:5px 12px;">{{topics}}</span>
+      </td></tr>
+
+      <!-- sender -->
+      <tr><td style="padding:20px 28px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#05080d;border:1px solid #172231;border-radius:12px;">
+          <tr><td style="padding:14px 16px;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;">
+            <p style="margin:0 0 2px;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6f8196;">from</p>
+            <p style="margin:0;font-size:16px;font-weight:600;color:#e3ebf4;">{{name}}</p>
+            <p style="margin:2px 0 0;font-size:14px;"><a href="mailto:{{email}}" style="color:#3ee6ff;text-decoration:none;">{{email}}</a></p>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <!-- message -->
+      <tr><td style="padding:16px 28px 0;">
+        <p style="margin:0 0 8px;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6f8196;">message</p>
+        <div style="border-left:2px solid #3ee6ff;background:#0d1520;border-radius:0 12px 12px 0;padding:14px 16px;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#b9c6d4;white-space:pre-wrap;">{{message}}</div>
+      </td></tr>
+
+      <!-- action -->
+      <tr><td style="padding:24px 28px 28px;">
+        <a href="mailto:{{email}}?subject=Re:%20{{ticket}}" style="display:inline-block;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:14px;font-weight:700;color:#05080d;background:#3ee6ff;border-radius:10px;padding:12px 20px;text-decoration:none;">$ reply --to {{name}}</a>
+        <p style="margin:12px 0 0;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;font-size:12.5px;color:#6f8196;">Or just hit Reply — it goes straight to {{email}}.</p>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <!-- footer -->
+  <tr><td style="padding:18px 4px 0;font-family:'JetBrains Mono',Menlo,Consolas,monospace;font-size:11.5px;color:#4f6075;">
+    Sent from the contact form on imtarunchaudhary.dev &nbsp;·&nbsp; exit 0
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

@@ -5,7 +5,7 @@ interface GKSlogoProps {
   label?: string; // Optional prop for custom label
 }
 
-const GKSlogo: React.FC<GKSlogoProps> = ({ size = 80, label = 'GKS' }) => {
+const GKSlogo: React.FC<GKSlogoProps> = ({ size = 80, label = 'GKE' }) => {
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       {/* Icon */}
