@@ -74,7 +74,7 @@ export function Platforms() {
   );
 }
 
-/* ---------- personal projects in build ---------- */
+/* ---------- personal projects ---------- */
 function Hint({ hints }: { hints: string[] }) {
   const [i, setI] = useState(0);
   useEffect(() => {
@@ -88,8 +88,8 @@ function Hint({ hints }: { hints: string[] }) {
 export function Building() {
   return (
     <section id="building"><div className="wrap">
-      <div className="head reveal"><p className="eyebrow">{"// git checkout -b side-projects"}</p><h2>Building now.</h2>
-        <p className="lead">A few personal projects taking shape outside work. More soon.</p></div>
+      <div className="head reveal"><p className="eyebrow">{"// git checkout -b side-projects"}</p><h2>Built on the side.</h2>
+        <p className="lead">Personal products I've built and run outside work.</p></div>
       <div className="bld">
         {building.map((b, n) => (
           <Card key={b.title} className={`bd panel reveal k-${b.kind}`} style={{ ["--d" as string]: `${-n * 1.3}s` }}>

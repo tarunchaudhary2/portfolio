@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { profile } from "@/app/lib/portfolio";
 
 const LINKS = [
-  ["pipeline", "pipeline"], ["arch-s", "architecture"], ["exp", "git log"], ["platforms", "platforms"], ["building", "building"],
+  ["pipeline", "pipeline"], ["arch-s", "architecture"], ["exp", "git log"], ["platforms", "platforms"], ["building", "projects"],
   ["ai", "ai"], ["services", "services"], ["field", "field"], ["stack-s", "stack"], ["contact", "contact"],
 ];
 

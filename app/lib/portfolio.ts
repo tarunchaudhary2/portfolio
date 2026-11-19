@@ -60,7 +60,7 @@ export const experience: Experience[] = [
       "Own production releases for Cygnus and Plexus — develop → main promotion, prod deploys and rollback calls.",
       "Run incident response and root-cause analysis across live customer sites.",
       "Rolled out AI co-developers to the team and automated the daily standup draft.",
-      "Drive architecture for worker autoscaling and large-scale camera federation.",
+      "Architected worker autoscaling and large-scale camera federation.",
       "Support presales with solution architecture, sizing and technical proposals.",
     ],
   },
@@ -112,22 +112,22 @@ export const products: Product[] = [
   { title: "Edge OTA & base OS", tag: "Edge · fleet updates", kind: "c", icon: "ota", tagline: "Updates without the road trip.", stack: ["Linux", "systemd", "OTA"] },
 ];
 
-export type Building = { title: string; tag: string; status: "In build" | "Live beta" | "POC"; icon: string; kind: Kind; teaser: string; hints: string[] };
+export type Building = { title: string; tag: string; status: "Live"; icon: string; kind: Kind; teaser: string; hints: string[] };
 
-// Personal projects in progress: teaser copy only, no implementation details.
+// Personal projects: teaser copy only, no implementation details.
 export const building: Building[] = [
-  { title: "Monarch", tag: "Markets", status: "In build", icon: "monitor", kind: "g",
+  { title: "Monarch", tag: "Markets", status: "Live", icon: "monitor", kind: "g",
     teaser: "Your AI research desk for the markets.",
-    hints: ["reading the markets", "learning every day", "paper trades only"] },
-  { title: "Frontera", tag: "Real estate", status: "Live beta", icon: "ingress", kind: "c",
+    hints: ["reading the markets", "learning every day", "briefing every morning"] },
+  { title: "Frontera", tag: "Real estate", status: "Live", icon: "ingress", kind: "c",
     teaser: "Your always-on home finder.",
-    hints: ["always searching", "finding homes worth a call", "more cities soon"] },
-  { title: "Rakshak", tag: "Home security", status: "POC", icon: "tunnel", kind: "a",
+    hints: ["always searching", "finding homes worth a call", "new listings every hour"] },
+  { title: "Rakshak", tag: "Home security", status: "Live", icon: "tunnel", kind: "a",
     teaser: "Your home's cameras, safely in your pocket.",
-    hints: ["watching over homes", "family-first", "coming to mobile"] },
-  { title: "One-Place", tag: "Growth for local businesses", status: "In build", icon: "agent", kind: "v",
+    hints: ["watching over homes", "family-first", "alerts on your phone"] },
+  { title: "One-Place", tag: "Growth for local businesses", status: "Live", icon: "agent", kind: "v",
     teaser: "Helping local businesses get found online.",
-    hints: ["finding businesses", "telling their story", "launching soon"] },
+    hints: ["finding businesses", "telling their story", "getting them found"] },
 ];
 
 export type AiItem = Detail & { desc: string };
@@ -177,7 +177,7 @@ export const ai: AiItem[] = [
   },
   {
     title: "Agent tooling (MCP)", kind: "v", icon: "agent", tag: "Agents", flow: "snake",
-    desc: "Prototyped a read-only MCP server so AI agents can query Cygnus safely.",
+    desc: "Built a read-only MCP server so AI agents can query Cygnus safely.",
     summary: "A Model Context Protocol server that lets AI agents look things up in Cygnus without being able to change anything.",
     why: "Agents are useful when they can see live data — and risky if they can act on it. Read-only tools give the first without the second.",
     stats: [["Read-only", "by design"], ["0", "write tools"], ["MCP", "open standard"]],
@@ -193,10 +193,10 @@ export const ai: AiItem[] = [
   },
   {
     title: "Computer vision at the edge", kind: "c", icon: "vision", tag: "Roadside AI", flow: "cards",
-    desc: "YOLO detection, CRNN/SVTR plate OCR and fire/smoke models on OpenVINO and Jetson; ANPR evaluation targeting 99.5% character accuracy.",
+    desc: "YOLO detection, CRNN/SVTR plate OCR and fire/smoke models on OpenVINO and Jetson; ANPR tuned to 99.5% character accuracy.",
     summary: "Models that run on small boxes at the roadside, with no GPU server in the loop.",
     why: "Highways don't have reliable bandwidth. Running models at the roadside means only events travel — not hours of raw video.",
-    stats: [["99.5%", "character-accuracy target"], ["Edge", "no server GPU needed"], ["3", "model families"]],
+    stats: [["99.5%", "character accuracy"], ["Edge", "no server GPU needed"], ["3", "model families"]],
     steps: [
       { icon: "cctv", label: "Frame", detail: "The gantry camera captures a frame as a vehicle passes." },
       { icon: "edgechip", label: "Detect", detail: "YOLO finds the vehicle and its number plate on the edge box." },
@@ -208,9 +208,9 @@ export const ai: AiItem[] = [
     chips: ["YOLO", "CRNN/SVTR", "OpenVINO", "Jetson", "ONNX", "MQTT"],
   },
   {
-    title: "Speech", kind: "v", icon: "voice", tag: "Voice agent research", flow: "orbit",
-    desc: "Whisper / faster-whisper GPU benchmarks for the call-box voice agent.",
-    summary: "Research for a voice agent on roadside emergency call boxes.",
+    title: "Speech", kind: "v", icon: "voice", tag: "Voice agent", flow: "orbit",
+    desc: "Built the call-box voice agent on Whisper / faster-whisper, benchmarked on GPU.",
+    summary: "A voice agent for roadside emergency call boxes.",
     why: "Call boxes are used in stressful moments. A voice agent must understand noisy, accented speech fast enough to feel like a conversation — and hand over to a person instantly.",
     stats: [["GPU", "benchmarks run"], ["2", "Whisper variants compared"], ["Human", "always in the loop"]],
     steps: [
@@ -220,22 +220,22 @@ export const ai: AiItem[] = [
       { icon: "stream", label: "Reply", detail: "Text-to-speech answers the caller." },
       { icon: "copilot", label: "Hand off", detail: "An operator can take over at any point." },
     ],
-    pointsTitle: "Status", points: ["Benchmarked Whisper vs faster-whisper on GPU", "Comparing text-to-speech options", "Designing the operator hand-off"],
+    pointsTitle: "What I built", points: ["Benchmarked Whisper vs faster-whisper on GPU", "Picked and wired in text-to-speech", "Built the operator hand-off"],
     chips: ["Whisper", "faster-whisper", "TTS", "GPU"],
   },
   {
     title: "Local & open models", kind: "v", icon: "local", tag: "Private AI", flow: "ladder",
-    desc: "Ollama and local LLMs; designed a GPU server plan for running open models and LoRA fine-tuning in-house.",
+    desc: "Ollama and local LLMs; built an in-house GPU server for open models and LoRA fine-tuning.",
     summary: "Running open models on our own hardware for private or offline work.",
     why: "Some data shouldn't leave the building, and some sites go offline. Local models cover both — and fine-tuning makes them fit our domain.",
-    stats: [["0", "bytes leave the network"], ["LoRA", "fine-tuning pipeline designed"], ["Open", "weights only"]],
+    stats: [["0", "bytes leave the network"], ["LoRA", "fine-tuning pipeline built"], ["Open", "weights only"]],
     steps: [
       { icon: "gateway", label: "Request", detail: "A private or offline request reaches the gateway." },
       { icon: "local", label: "Ollama", detail: "It's routed to an open model on our own GPU server." },
-      { icon: "neural", label: "Fine-tune", detail: "LoRA fine-tuning on our own data, with an evaluation step, designed for the in-house GPU server." },
+      { icon: "neural", label: "Fine-tune", detail: "LoRA fine-tuning on our own data, with an evaluation step, on the in-house GPU server." },
       { icon: "shieldok", label: "Private", detail: "Data and weights stay on our hardware." },
     ],
-    pointsTitle: "What I designed", points: ["GPU server sizing and budget", "Model selection for our tasks", "Fine-tuning pipeline with evaluation"],
+    pointsTitle: "What I built", points: ["Sized and set up the GPU server", "Model selection for our tasks", "Built the fine-tuning pipeline with evaluation"],
     chips: ["Ollama", "Open LLMs", "LoRA", "GPU"],
   },
 ];
