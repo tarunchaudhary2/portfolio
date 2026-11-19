@@ -42,7 +42,13 @@ export function Reveal() {
   useEffect(() => {
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((el, i) => { (el as HTMLElement).style.transitionDelay = (i % 3) * 0.08 + "s"; io.observe(el); });
-    return () => io.disconnect();
+    // Pause CSS and SVG animations in sections that are off-screen; most of the per-frame cost on phones.
+    const vis = new IntersectionObserver((es) => es.forEach((e) => {
+      e.target.classList.toggle("off", !e.isIntersecting);
+      e.target.querySelectorAll("svg").forEach((s) => (e.isIntersecting ? s.unpauseAnimations() : s.pauseAnimations()));
+    }), { rootMargin: "150px 0px" });
+    document.querySelectorAll("main > section, main > header, footer").forEach((el) => vis.observe(el));
+    return () => { io.disconnect(); vis.disconnect(); };
   }, []);
   return null;
 }
@@ -56,16 +62,22 @@ export function Mesh() {
     type N = { x: number; y: number; vx: number; vy: number; r: number; ai: boolean };
     let W = 0, H = 0, dpr = 1, nodes: N[] = [], raf = 0, mx = -1e4, my = -1e4;
     const pk: { a: N; b: N; t: number; ai: boolean }[] = [];
+    // Phones get fewer nodes, 1x pixels and a lower frame rate; the background stays subtle either way.
+    const small = matchMedia("(max-width: 760px), (pointer: coarse)").matches;
+    const step = small ? 50 : 33;
+    let lastW = 0;
     const init = () => {
-      dpr = Math.min(devicePixelRatio || 1, 1.25); W = c.width = innerWidth * dpr; H = c.height = innerHeight * dpr;
-      const n = Math.round(Math.min(90, Math.max(30, (innerWidth * innerHeight) / 16000)));
+      if (innerWidth === lastW && nodes.length) { H = c.height = innerHeight * dpr; return; } // mobile toolbar resize: keep nodes
+      lastW = innerWidth;
+      dpr = small ? 1 : Math.min(devicePixelRatio || 1, 1.25); W = c.width = innerWidth * dpr; H = c.height = innerHeight * dpr;
+      const n = small ? 22 : Math.round(Math.min(80, Math.max(30, (innerWidth * innerHeight) / 18000)));
       nodes = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.14 * dpr, vy: (Math.random() - 0.5) * 0.14 * dpr, r: (Math.random() * 1.4 + 0.8) * dpr, ai: Math.random() < 0.18 }));
     };
     const move = (e: PointerEvent) => { mx = e.clientX * dpr; my = e.clientY * dpr; };
     let last = 0;
     const frame = (now = 0) => {
       if (!reduce) raf = requestAnimationFrame(frame);
-      if (document.hidden || now - last < 33) return; // ~30fps is plenty for a background
+      if (document.hidden || now - last < step) return; // background runs at 20-30fps
       last = now;
       x.clearRect(0, 0, W, H); const L = 150 * dpr;
       if (!reduce) for (const n of nodes) { n.x += n.vx; n.y += n.vy; if (n.x < 0 || n.x > W) n.vx *= -1; if (n.y < 0 || n.y > H) n.vy *= -1; }

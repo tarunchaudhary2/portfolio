@@ -12,13 +12,30 @@ type Dot = { g: SVGElement; parts: SVGElement[]; o: Path; t: number; v: number; 
 // Moving request "comets": a soft halo plus a short fading tail.
 type Vis = { on: boolean };
 
+// Each path is sampled once; per-frame lookups are array reads instead of getPointAtLength calls.
+const SAMPLES = 96;
+const sampleCache = new WeakMap<SVGPathElement, Float32Array>();
+function samples(o: Path) {
+  let a = sampleCache.get(o.p);
+  if (!a) {
+    a = new Float32Array((SAMPLES + 1) * 2);
+    for (let i = 0; i <= SAMPLES; i++) { const pt = o.p.getPointAtLength((i / SAMPLES) * o.len); a[i * 2] = pt.x; a[i * 2 + 1] = pt.y; }
+    sampleCache.set(o.p, a);
+  }
+  return a;
+}
+function pointAt(a: Float32Array, t: number) {
+  const f = Math.min(Math.max(t, 0), 1) * SAMPLES, i = Math.min(Math.floor(f), SAMPLES - 1), k = f - i;
+  return [a[i * 2] + (a[i * 2 + 2] - a[i * 2]) * k, a[i * 2 + 1] + (a[i * 2 + 3] - a[i * 2 + 1]) * k];
+}
+
 function comets(layer: SVGElement, spacing: number, vis: Vis) {
-  const dots: Dot[] = [];
+  const dots: (Dot & { s: Float32Array })[] = [];
   let raf = 0;
   const add = (o: Path, delay = 0, v = 0.012, onEnd?: () => void) => {
     const g = mk("g", { opacity: 0 }, layer);
-    const parts = ([[11, 0.12], [4.6, 1], [3.3, 0.75], [2.4, 0.5], [1.7, 0.3]] as const).map(([r, op]) => mk("circle", { r, fill: o.c, "fill-opacity": op, cx: -20, cy: -20 }, g));
-    dots.push({ g, parts, o, t: -delay, v, onEnd });
+    const parts = ([[10, 0.14], [4.6, 1], [2.8, 0.55]] as const).map(([r, op]) => mk("circle", { r, fill: o.c, "fill-opacity": op, cx: -20, cy: -20 }, g));
+    dots.push({ g, parts, o, t: -delay, v, onEnd, s: samples(o) });
   };
   const tick = () => {
     raf = requestAnimationFrame(tick);
@@ -30,7 +47,7 @@ function comets(layer: SVGElement, spacing: number, vis: Vis) {
         const tt = q.t - Math.max(0, k - 1) * spacing;
         if (tt < 0) { c.setAttribute("visibility", "hidden"); return; } // tail stays hidden until it has room
         c.setAttribute("visibility", "visible");
-        const pt = q.o.p.getPointAtLength(tt * q.o.len); c.setAttribute("cx", String(pt.x)); c.setAttribute("cy", String(pt.y));
+        const [x, y] = pointAt(q.s, tt * 1); c.setAttribute("cx", x.toFixed(1)); c.setAttribute("cy", y.toFixed(1));
       });
     }
   };
@@ -124,9 +141,9 @@ export function Architecture() {
       return { p, len: p.getTotalLength(), c };
     });
     Object.values(N).forEach((n) => {
-      glyph(gn, n.x, n.y, n.ic, n.col, narrow ? 48 : 46, reduce);
+      glyph(gn, n.x, n.y, n.ic, n.col, narrow ? 48 : 46, reduce || narrow);
       const hd = mk("circle", { cx: n.x + R * 0.85, cy: n.y - R * 0.8, r: 3, fill: n.col === C.amber ? C.amber : C.green, stroke: C.bg, "stroke-width": 1.5 }, gn);
-      if (!reduce) mk("animate", { attributeName: "opacity", values: "1;.35;1", dur: 1.6 + Math.random() * 1.6 + "s", repeatCount: "indefinite" }, hd);
+      if (!reduce && !narrow) mk("animate", { attributeName: "opacity", values: "1;.35;1", dur: 1.6 + Math.random() * 1.6 + "s", repeatCount: "indefinite" }, hd);
       tx(n.x, n.y + R + (narrow ? 22 : 20), n.name, C.text, narrow ? 19 : 14, 600); if (!narrow) tx(n.x, n.y + R + 36, n.sub, C.dim, 11);
     });
     if (reduce) return () => {};
@@ -136,7 +153,7 @@ export function Architecture() {
       const i = (Math.random() * paths.length) | 0, [a, b, what] = LINKS[i];
       cm.add(paths[i], 0, 0.007 + Math.random() * 0.006);
       if (capRef.current && Math.random() < 0.25) capRef.current.textContent = `▸ ${N[a].name} → ${N[b].name}: ${what}`;
-    }, 180);
+    }, narrow ? 360 : 200);
     return () => { clearInterval(id); cm.stop(); };
   });
   return (
@@ -195,7 +212,7 @@ export function AIHub() {
     const edge = (p: P, q: P, c1: string, c2: string, id: string, c: string) => {
       const st = grad(id, c1, c2, p, q); mk("path", { d: curve(p, q), fill: "none", stroke: st, "stroke-width": 6, "stroke-opacity": 0.07 }, gl);
       const el = mk("path", { d: curve(p, q), fill: "none", stroke: st, "stroke-width": 1.6, "stroke-opacity": 0.55, "stroke-dasharray": "2 6" }, gl) as SVGPathElement;
-      if (!reduce) mk("animate", { attributeName: "stroke-dashoffset", from: 16, to: 0, dur: "1.2s", repeatCount: "indefinite" }, el);
+      if (!reduce && !narrow) mk("animate", { attributeName: "stroke-dashoffset", from: 16, to: 0, dur: "1.2s", repeatCount: "indefinite" }, el);
       return { p: el, len: el.getTotalLength(), c };
     };
     const rim = (p: P) => ({ x: cx + Math.sign(p.x - cx) * (R + 2), y: cy + (p.y - cy) * 0.25 });
@@ -216,7 +233,7 @@ export function AIHub() {
     mk("circle", { cx, cy, r: R - 8, fill: "none", stroke: V, "stroke-opacity": 0.25 }, gn);
     tx(cx, cy - 4, "LiteLLM", C.text, narrow ? 18 : 22, 700); tx(cx, cy + 16, "gateway", V, narrow ? 12 : 12);
     const node = (p: P, name: string, sub: string, ic: string, col: string, side: number) => {
-      glyph(gn, p.x, p.y, ic, col, narrow ? 44 : 52, reduce);
+      glyph(gn, p.x, p.y, ic, col, narrow ? 44 : 52, reduce || narrow);
       if (narrow) tx(p.x, p.y + 42, name, C.text, 15, 600);
       else { const x = p.x + side * 42, anc = side < 0 ? "end" : "start"; tx(x, p.y - 2, name, C.text, 15, 600, anc); tx(x, p.y + 16, sub, C.dim, 11.5, 0, anc); }
     };
